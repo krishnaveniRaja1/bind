@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>bind</title>
+<script src="jquery.min.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function(){
+	   $("#btn").bind('click',add);
+	   $("#a").bind('focus',type)
+	          .bind('keyup',leave)
+			  .bind('blur',entr);
+});
+    function type()
+	{
+	$("#result").html("you r in firstno text box");
+    }
+	function leave()
+	{
+	$("#result").html("you r outof firstno text box");
+    }
+	function entr()
+	{
+	$("#result").html("you r in secondno text box");
+    }
+    function add()
+	{
+	 var c = Number($("#a").val())+Number($("#b").val());
+	 $("#result").html(c);
+	}
+</script>
+</head>
+<body>
+<h3>add two numbers</h3>
+first no<input type="text"  id="a" ><br>
+second no<input type="text"  id="b" ><br>
+<input type="button" id="btn" value="calculte"><br>
+<p id="result">-</p>
+
+</body>
+</html>
